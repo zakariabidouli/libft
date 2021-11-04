@@ -5,7 +5,7 @@ char *ft_strrchr(const char *s, int c)
 {
     int i;
 
-    i = 0;
+    i = 0;  //ft_strlen
     while(s[i])
         i++;
     while(i > -1)
