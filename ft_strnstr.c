@@ -4,24 +4,37 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
     int i;
     int j;
+    int k;
+    char *tmp;
+    tmp = (char *)haystack;
     j = 0;
     i = 0;
-    if (needle == NULL)
-        return ((char *)haystack);
-    while (haystack[i] && i < len)
+    if (!*needle)
+        return ((char *)tmp);
+    while (tmp[i] && i < len )
     {
-        while (haystack[i] == needle[j])
+        k = i;  
+        while ((tmp[k] == needle[j] || needle[j] == '\0') && k < len)
         {
+            if (needle == '\0')
+                return ((char *)&tmp[i]);
             j++;
-            return (0);            
+            k++;            
         }
+        if (needle[j] == '\0')
+            return ((char *)&tmp[i]);
         i++;
     }
-    return ((char *)needle);
+    return (0);
 }
 
 int main ()
 {
-    printf ("%s", ft_strnstr("you", "are you d", 10));
+    const char *largestring = "TutorialsPoint";
+    const char *smallstring = "tor";
+    char *ptr;
+
+    ptr = strnstr(largestring, smallstring, 4);
+    printf ("%s", ptr);
     return 0;
 }
