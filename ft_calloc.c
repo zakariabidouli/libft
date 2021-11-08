@@ -2,25 +2,37 @@
 
 void    *ft_calloc(size_t count, size_t size)
 {
-    int i;
+    int     i;
+    char    *ptr;
+    int     len;
+
+    len = (1 + count) * size;
+
     i = 0;
-    char *ptr;
-    ptr = malloc ((1 + count) * size);
+    ptr = malloc (len);
     if (ptr == NULL)
-        return (0);
-    while (ptr[i])
+        return (NULL);
+    while (i < len)
     {
         ptr[i] = 0;
         i++;
     }
-    return(ptr); 
+    return (ptr); 
 }
+
 #include <stdio.h>
     int main() {
-        int i, * p, sum = 0;
+        int i,  sum = 0;
+
+    char *p;    
+
         p = ft_calloc(10, sizeof(int));
 
+        for (size_t i = 0; i < 10; i++)
+        {
+           printf("[%c]\n", p[i]);
+        }
+        
 
-        printf("%s", &p);
         return 0;
     }

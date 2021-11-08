@@ -16,7 +16,7 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
     while (tmp[i] && i < len )
     {
         k = i;  
-        while (tmp[k] == tmp2[j] || tmp2[j] == '\0')
+        while ((tmp[k] == tmp2[j] || tmp2[j] == '\0') && (k < len))
         {
             if (tmp2 [j]== '\0')
                 return ((char *)&tmp[i]);
@@ -33,11 +33,11 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 int main ()
 {
     const char *largestring = "TutorialsPoint";
-    const char *smallstring = "to";
+    const char *smallstring = "u";
     char *ptr;
 
-    ptr = ft_strnstr(largestring, smallstring, 20);
+    ptr = ft_strnstr(largestring, smallstring, 1);
     printf ("%s\n", ptr);
-    printf("%s\n",strnstr(largestring, smallstring, 20));
+    printf("%s\n",strnstr(largestring, smallstring, 1));
     return 0;
 }
