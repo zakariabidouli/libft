@@ -6,22 +6,24 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
     int j;
     int k;
     char *tmp;
+    char *tmp2;
     tmp = (char *)haystack;
+    tmp2 = (char *)needle;
     j = 0;
     i = 0;
-    if (!*needle)
+    if (!*tmp2)
         return ((char *)tmp);
     while (tmp[i] && i < len )
     {
         k = i;  
-        while ((tmp[k] == needle[j] || needle[j] == '\0') && k < len)
+        while (tmp[k] == tmp2[j] || tmp2[j] == '\0')
         {
-            if (needle == '\0')
+            if (tmp2 [j]== '\0')
                 return ((char *)&tmp[i]);
-            j++;
-            k++;            
+            k++;
+            j++;            
         }
-        if (needle[j] == '\0')
+        if (tmp2[j] == '\0')
             return ((char *)&tmp[i]);
         i++;
     }
@@ -31,10 +33,11 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 int main ()
 {
     const char *largestring = "TutorialsPoint";
-    const char *smallstring = "tor";
+    const char *smallstring = "to";
     char *ptr;
 
-    ptr = strnstr(largestring, smallstring, 4);
-    printf ("%s", ptr);
+    ptr = ft_strnstr(largestring, smallstring, 20);
+    printf ("%s\n", ptr);
+    printf("%s\n",strnstr(largestring, smallstring, 20));
     return 0;
 }
