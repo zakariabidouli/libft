@@ -11,20 +11,21 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
     i = 0;
     j = 0;
     tmp = (char *)s;
-    ptr = (char *)malloc(len);
+    ptr = (char *)malloc(len + 1);
     if (ptr == NULL)
         return (NULL);
     while (tmp[i])
     {
-        if (tmp[i] == (char)start && i < len) 
-            while (ptr[j])
+        if (tmp[i] == (char)start) 
+            while (ptr[j] && i < len)
             {
-                tmp[i] = ptr[j];
+                ptr[i] = tmp[j];
                 i++;
                 j++;
             }
         i++;
     }
+    ptr[i] = '\0';
     return (ptr);
 }
 int main()
