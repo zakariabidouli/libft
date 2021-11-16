@@ -54,39 +54,42 @@ char	*ft_strdup(char	*src)
 	}
 	p[i] = '\0';
 	return (p);
+}
 
-
-char	*ft_strdup(char	*src)
+char    *ft_strchr(const char *s, int c)
 {
-	int		i;
-	char	*p;
+    int i;
 
-	i = 0;
-	while (src[i])
-		i++;
-	p = (char *)malloc(i + 1);
-	if (p == NULL)
-		return (NULL);
-	i = 0;
-	while (src[i])
-	{
-		p[i] = src[i];
-		i++;
-	}
-	p[i] = '\0';
-	return (p);
+    i = 0;
+    while(s[i])
+    {
+        if (s[i] == (char)c)
+            return ((char*)&s[i]);
+        i++;
+    }
+    return (0);
 }
 
 char *ft_strtrim(char const *s1, char const *set)
 {
+    char    *s2;
+    char    *set1;
+    int     i;
 
- 
-   
+    s2 = (char  *)s2;
+    set1 = (char  *)set1;
+    i = 0;
+    while(s2[i])
+    {
+        ft_strchr(s2,set1[i]);
+        i++;
+    }
+    return(ft_strdup(s2));
 }
 #include <stdio.h>
 int main ()
 {
-    char *s = "abclkjfkrfjabc";
+    char *s = "abclkjfkrfjacccccaaaaabb";
     char *st = "abc";
     printf("[%s]",ft_strtrim(s,st));
     return 0;
