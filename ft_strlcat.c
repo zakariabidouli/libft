@@ -1,3 +1,4 @@
+#include <unistd.h>
 unsigned int	ft_strlen(char *str)
 {
 	unsigned int	i;
@@ -10,7 +11,7 @@ unsigned int	ft_strlen(char *str)
 	return (i);
 }
 
-unsigned int	ft_strlcat(char	*dest, char	*src, unsigned int	size)
+unsigned int	ft_strlcat(char	* restrict dest, char	*restrict src, size_t	dstsize)
 {
 	unsigned int	org_len;
 	unsigned int	i;
@@ -19,9 +20,9 @@ unsigned int	ft_strlcat(char	*dest, char	*src, unsigned int	size)
 	i = 0;
 	j = ft_strlen(dest);
 	org_len = j;
-	if (size < j || !size)
-		return (size + ft_strlen(src));
-	while (src[i] && (j < (size - 1)))
+	if (dstsize < j || !dstsize)
+		return (dstsize + ft_strlen(src));
+	while (src[i] && (j < (dstsize - 1)))
 	{
 		dest[j] = src[i];
 		j++;
