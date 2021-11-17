@@ -11,60 +11,44 @@ int	ft_strlen(char	*str)
 	}
 	return (i);
 }
-char    *ft_strstr(char    *str, char    *to_find)
-{
-    unsigned int    i;
-    unsigned int    j;
-    unsigned int    k;
 
-    if (!*to_find)
-        return (str);
+char *ft_substr(char const *s, unsigned int start, size_t len)
+{
+    char    *tmp;
+    char    *ptr;
+    int     i;
+    int     j;
+
     i = 0;
-    while (str[i])
+    j = 0;
+    tmp = (char *)s;
+    ptr = (char *)malloc(len + 1);
+    if (ptr == NULL)
+        return (NULL);
+    while (tmp[i])
     {
-        j = 0;
-        k = i;
-        while (to_find[j] == '\0' || str[k] == to_find[j])
-        {
-            if (to_find[j] == '\0')
-                return (&str[i]);
-            k++;
-            j++;
-        }
-        str++;
+        if (tmp[i] == (char)start) 
+            while (ptr[j] && i < len)
+            {
+                ptr[i] = tmp[j];
+                i++;
+                j++;
+            }
+        i++;
     }
-    return (0);
-}
-char	*ft_strdup(char	*src)
-{
-	int		i;
-	char	*p;
-
-	i = 0;
-	while (src[i])
-		i++;
-	p = (char *)malloc(i + 1);
-	if (p == NULL)
-		return (NULL);
-	i = 0;
-	while (src[i])
-	{
-		p[i] = src[i];
-		i++;
-	}
-	p[i] = '\0';
-	return (p);
+    ptr[i] = '\0';
+    return (ptr);
 }
 
-char    *ft_strchr(const char *s, int c)
+int search(const char  *set, char c)
 {
     int i;
 
     i = 0;
-    while(s[i])
-    {
-        if (s[i] == (char)c)
-            return ((char*)&s[i]);
+    while (set[i])
+    {    
+        if (set[i] == c)
+            return (1);
         i++;
     }
     return (0);
@@ -72,25 +56,42 @@ char    *ft_strchr(const char *s, int c)
 
 char *ft_strtrim(char const *s1, char const *set)
 {
-    char    *s2;
-    char    *set1;
-    int     i;
 
-    s2 = (char  *)s2;
-    set1 = (char  *)set1;
+    char    *p;
+    int     i;
+    int     j;
+
+
+    if (s1 == NULL)
+        return NULL;
+    if (set == NULL)
+        return ((char *)s1); //??
+
     i = 0;
-    while(s2[i])
+    while(s1[i])
     {
-        ft_strchr(s2,set1[i]);
-        i++;
+        if (search(set, s1[i]))
+            i++;
+        else
+            break ;
     }
-    return(ft_strdup(s2));
+    j = ft_strlen((char *)s1) - 1;
+    while(s1[j])
+    {
+        if (search(set, s1[j]))
+            j--;
+        else
+            break ;
+    }
+    printf("%d, %d\n", i, j);
+    
+    return (ft_substr(s1, i, j - i));
 }
 #include <stdio.h>
 int main ()
 {
-    char *s = "abclkjfkrfjacccccaaaaabb";
-    char *st = "abc";
-    printf("[%s]",ft_strtrim(s,st));
+    char *s = "0123456789";
+    char *st = "019";
+    printf("[%s]\n", ft_strtrim(s,st));
     return 0;
 }

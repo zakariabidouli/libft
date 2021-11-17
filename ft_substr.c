@@ -4,36 +4,35 @@
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
     char    *tmp;
-    char    *ptr;
+    char    *p;
     int     i;
     int     j;
 
+  
+    tmp = (char *)s;
+    p = (char *)malloc(len + 1);
+    if (p == NULL)
+        return (NULL);
     i = 0;
     j = 0;
-    tmp = (char *)s;
-    ptr = (char *)malloc(len + 1);
-    if (ptr == NULL)
-        return (NULL);
     while (tmp[i])
     {
-        if (tmp[i] == (char)start) 
-            while (ptr[j] && i < len)
+        if (i == start) 
+        {   
+            while (p[j] && j <len)
             {
-                ptr[i] = tmp[j];
+                p[i] = tmp[j];
                 i++;
                 j++;
             }
+        }
         i++;
     }
-    ptr[i] = '\0';
-    return (ptr);
+    p[i] = '\0';
+    return (p);
 }
 int main()
 {
-    char *p;
-    char  *src  = "abcdefgh";
-	unsigned int  x = (char)'b';
-    p = ft_substr(src, x, 5);
-    printf ("[%s]",p);
+    printf ("[%s]\n", ft_substr("ABCDEF", 0, 3));
     return 0;
 }
