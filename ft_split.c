@@ -40,10 +40,19 @@ char *limit(char *str, char   c)
     return (p);
 }
 
-char **ft_split(char const *s, char c) // 
+char **ft_split(char const *s, char c) 
 {
     int i;
     char **ptr = NULL;
+    
+    i = 0;
+    while (i)
+    {
+        *ptr[i] = (char *)malloc(ft_strlen())
+    }
+
+
+
 
     
  
