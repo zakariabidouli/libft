@@ -17,18 +17,18 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
     j = 0;
     while (tmp[i])
     {
-        if (i == start) 
-        {   
-            while (p[j] && j <len)
+        if (tmp[i] && (i == start))
+        {
+            while (tmp[i] && (j < len))
             {
-                p[i] = tmp[j];
+                p[j] = tmp[i];
                 i++;
                 j++;
             }
+            i++;
         }
-        i++;
     }
-    p[i] = '\0';
+    p[i]='\0';
     return (p);
 }
 int main()
