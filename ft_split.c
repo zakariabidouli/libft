@@ -14,7 +14,7 @@ int search(const char  *set, char c)
     }
     return (0);
 }
-char *limit(char *str, char   c)
+char *sptwrd(char *str, char   c)
 {
     int i;
     int j;
@@ -27,29 +27,28 @@ char *limit(char *str, char   c)
            break;
         i++; 
     }
-    j = 0;
     p = (char *)malloc(i + 1); 
     if (p == NULL)
         return(NULL);
-    while (str[j] && j <= i)
+    j = 0;
+    while (str[j] && j <= ft_strlen(str))
     {
         p[j] = str[j];
         j++;
     }
     p[j] = '\0';
-    return (p);
+    return ();
 }
 
 char **ft_split(char const *s, char c) 
 {
     int i;
+    char *p;
     char **ptr = NULL;
     
-    i = 0;
-    while (i)
-    {
-        *ptr[i] = (char *)malloc(ft_strlen())
-    }
+
+
+    *ptr[i] = (char **)malloc(ft_strlen(s));
 
 
 

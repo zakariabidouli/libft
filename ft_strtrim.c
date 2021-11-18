@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 int	ft_strlen(char	*str)
@@ -15,29 +16,32 @@ int	ft_strlen(char	*str)
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
     char    *tmp;
-    char    *ptr;
+    char    *p;
     int     i;
     int     j;
 
+  
+    tmp = (char *)s;
+    p = (char *)malloc(len + 1);
+    if (p == NULL)
+        return (NULL);
     i = 0;
     j = 0;
-    tmp = (char *)s;
-    ptr = (char *)malloc(len + 1);
-    if (ptr == NULL)
-        return (NULL);
     while (tmp[i])
     {
-        if (tmp[i] == (char)start) 
-            while (ptr[j] && i < len)
+        if (i == start)
+        {
+            while (tmp[i] && (j < len))
             {
-                ptr[i] = tmp[j];
+                p[j] = tmp[i];
                 i++;
                 j++;
             }
+        }
         i++;
     }
-    ptr[i] = '\0';
-    return (ptr);
+    p[i]='\0';
+    return (p);
 }
 
 int search(const char  *set, char c)
@@ -83,11 +87,9 @@ char *ft_strtrim(char const *s1, char const *set)
         else
             break ;
     }
-    printf("%d, %d\n", i, j);
-    
     return (ft_substr(s1, i, j - i));
 }
-#include <stdio.h>
+
 int main ()
 {
     char *s = "0123456789";

@@ -17,7 +17,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
     j = 0;
     while (tmp[i])
     {
-        if (tmp[i] && (i == start))
+        if (i == start)
         {
             while (tmp[i] && (j < len))
             {
@@ -25,8 +25,8 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
                 i++;
                 j++;
             }
-            i++;
         }
+        i++;
     }
     p[i]='\0';
     return (p);
