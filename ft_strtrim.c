@@ -79,10 +79,10 @@ char *ft_strtrim(char const *s1, char const *set)
         else
             break ;
     }
-    j = ft_strlen((char *)s1) - 1;
-    while(s1[j])
+    j = ft_strlen((char *)s1);
+    while(j != i)
     {
-        if (search(set, s1[j]))
+        if (search(set, s1[j - 1]))
             j--;
         else
             break ;
@@ -92,8 +92,8 @@ char *ft_strtrim(char const *s1, char const *set)
 
 int main ()
 {
-    char *s = "0123456789";
-    char *st = "019";
+    char *s = "0745678912347";
+    char *st = "047";
     printf("[%s]\n", ft_strtrim(s,st));
     return 0;
 }

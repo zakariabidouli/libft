@@ -1,72 +1,103 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
-int search(const char  *set, char c)
+int search(const char  *str, char c)
 {
-    int i;
+	int end;
 
-    i = 0;
-    while (set[i])
-    {    
-        if (set[i] == c)
-            return (1);
-        i++;
-    }
-    return (0);
+	end = 0;
+	while(str[end] && str[end] != c)
+	{
+		end++; 
+	}
+	return (end);
 }
+
+
+int checkifsepa(char *str, int i, char c)
+{
+	if (str[i - 1] != c && str[i - 1] != '\0' && str[i + 1] != c && str[i + 1] != '\0' && str[i] == c )
+		return (1);
+	return (0);
+}
+
+int wordcount(char *str, char c)
+{
+	int i;
+	int j;
+	int words;
+
+	words = 0;
+	i = 0;
+	while (str[i])
+	{
+		j = search(str, c);
+		while (words && i == j + 1)
+		{	
+			if (checkifsepa(str, i, c))
+				words++;
+			else
+				i++;
+		}
+		i++;
+	}
+	return (words);
+}
+
 char *sptwrd(char *str, char   c)
 {
-    int i;
-    int j;
-    char *p;
+	int i;
+	int j;
+	char *p;
 
-    i = 0;
-    while(str[i])
-    {
-        if(search(str,c))
-           break;
-        i++; 
-    }
-    p = (char *)malloc(i + 1); 
-    if (p == NULL)
-        return(NULL);
-    j = 0;
-    while (str[j] && j <= ft_strlen(str))
-    {
-        p[j] = str[j];
-        j++;
-    }
-    p[j] = '\0';
-    return ();
+	i = search (str,c);
+	p = malloc(sizeof (char) * (i + 1)); 
+	if (p == NULL)
+		return(NULL);
+	j = 0;
+	while (str[j] && j < i)
+	{
+		p[j] = str[j];
+		j++;
+	}
+	p[j] = '\0';
+	return (p);
 }
 
-char **ft_split(char const *s, char c) 
+char **ft_split(char const *s, char c)
 {
-    int i;
-    char *p;
-    char **ptr = NULL;
-    
+	int i;
+	char **ptr;
 
 
-    *ptr[i] = (char **)malloc(ft_strlen(s));
-
-
-
-
-    
- 
+	ptr = malloc(sizeof(char *) * (wordcount((char *)s, c)));
+	*ptr = malloc(sizeof (char) * search((char *)s, c) * (wordcount((char *)s, c)));
+	if (ptr == NULL || *ptr == NULL)
+		return(NULL);
+	i = 0;
+	while(i < wordcount((char *)s, c))
+	{    
+		ptr[i] =malloc(sizeof (char) * (search(s, c)));
+		i++;
+	}
+	while (ptr[i] && i < wordcount((char *)s, c))
+	{
+		ptr[i] = sptwrd((char *)s, c);
+		i++;
+	}
+	return (ptr);
 }
+
 
 int main()
 {
-    char **p = ft_split("ABCDEF",'D');
-    for (size_t i = 0; p[i] != 0; i++)
-    {
-        printf ("[%s]\n", p[i]);
-        /* code */
-    }
-    
-    return 0;
+	//char *p = sptwrd("ABCDEFddfgdf",'D');
+	// char **ptr = ft_split("ABCDEFddfgdf",'D');
+	int count = wordcount(" AB             CB            DB ",' ');
+	printf ("[%d]\n", count);
+	
+	return 0;
 }
 
 /* [ "AB", "DE", "DE"]
