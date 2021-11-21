@@ -5,10 +5,14 @@ char *ft_itoa(int n)
 {
 	int nlen;
 	int i;
+	int j;
 	char *p;
 
 	nlen = 0;
 	i = n;
+	j = n;
+	// if (i == 2147483647)
+	// 	retrurn
 	if (i < 0)
 	{
 		nlen += 1;
@@ -28,14 +32,14 @@ char *ft_itoa(int n)
 	{
 		p[nlen] = (n % 10) + '0';
 		n = n / 10;
-		if(nlen != 0)
-			p[0] = '-';
 	}
+	if( j < 0)
+		p[0] = '-';
 	return(p);
 }
 int main()
 {
-	int  i = -1234;
+	int  i = 214748364;
 	printf("[%s]",ft_itoa(i));
 	return 0;
 }
