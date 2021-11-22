@@ -22,9 +22,9 @@ t_list *ft_lstnew(void *content)
 
 #define P(x) printf("[%s]\n", x);
 
-int main()
-{
-    struct s_list *lst;
-	lst = ft_lstnew("ello");
-    P(lst->content);
-}
+// int main()
+// {
+//     struct s_list *lst;
+// 	lst = ft_lstnew("ello");
+//     P(lst->content);
+// }
