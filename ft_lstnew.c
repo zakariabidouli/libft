@@ -2,46 +2,29 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-struct s_list
-{
-    void *content;
-    struct s_list *next;
-};
 
-struct s_human
-{
-    char *name;
-    int age;
-};
-
-
-typedef struct s_list t_list;
-
-typedef unsigned long ull;
-
+typedef struct s_list {
+void *content;
+struct s_list *next; } t_list;
 
 t_list *ft_lstnew(void *content)
 {
-    int             x;
-    ull             b;
-    unsigned int    a;
+    t_list *lst;
 
-    struct s_list *lst;
+    lst = malloc(sizeof(t_list));
+	if (lst == NULL)
+		return (NULL);
 
-    lst = malloc(sizeof(lst));
-
-    
-
-
+	lst->content = content;
+	lst->next = 0;
     return lst;
 }
 
-#define MALLOC(ptr) ptr = malloc(sizeof((ptr)))
+#define P(x) printf("[%s]\n", x);
 
 int main()
 {
     struct s_list *lst;
-    MALLOC(lst);
-    printf("%lu, %lu, %lu\n", sizeof(*lst), sizeof(struct s_list), sizeof(t_list));
-
+	lst = ft_lstnew("ello");
+    P(lst->content);
 }
