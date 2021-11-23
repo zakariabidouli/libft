@@ -5,6 +5,7 @@ typedef struct s_list {
 void *content;
 struct s_list *next; } t_list;
 
+
 t_list *ft_lstnew(void *content)
 {
     t_list *lst;
@@ -21,16 +22,16 @@ t_list *ft_lstnew(void *content)
 void ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list *list;
-	t_list *head ;
+	t_list *it ;
 
-	if (*lst == NULL)
+	if (*lst == NULL) // empty
 		*lst = new;
 	else
 	{
-		head = *lst;
-		while (head->next != NULL)
-			head = head->next;
-		head->next = *lst;
+		it = *lst;
+		while (it->next != NULL)
+			it = it->next;
+		it->next = new;
 	}
 	return;
 	
@@ -48,18 +49,18 @@ void ft_lstadd_back(t_list **lst, t_list *new)
 	// 	head = head ->next;
 	// head->next= new;
 }
-#include <string.h>
 
-int main ()
-{
-	t_list *list;
-	t_list *new_node;
+
+// int main ()
+// {
+// 	t_list *list;
+// 	t_list *new_node;
 	
-	list = ft_lstnew(strdup("hi"));
-	new_node = ft_lstnew(strdup("hi"));
+// 	list = ft_lstnew(strdup("hi"));
+// 	new_node = ft_lstnew(strdup("hi"));
 
-	ft_lstadd_back(&list, new_node);
+// 	ft_lstadd_back(&list, new_node);
 
-    printf("[%s]\n", new_node->next); 
-	return (0);
-}
+//     printf("[%s]\n", new_node->next); 
+// 	return (0);
+// }
