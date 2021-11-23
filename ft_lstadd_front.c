@@ -17,13 +17,17 @@
 
 void ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list *listmp;
+	t_list *it;
 
 	if (*lst == NULL)
-		new = *lst;
-	listmp = *lst;
+	{
+		*lst = new;
+		return ;
+	}
+	it = *lst;
+	new->next = it;
 	*lst = new;
-	new->next = listmp;
+	return;
 }
 
 // int main ()
@@ -33,11 +37,11 @@ void ft_lstadd_front(t_list **lst, t_list *new)
 	
 // 	list = NULL; //first node
 
-// 	ft_lstadd_back(&list, ft_lstnew(strdup("A")));
-// 	ft_lstadd_back(&list, ft_lstnew(strdup("B")));
-// 	ft_lstadd_back(&list, ft_lstnew(strdup("C")));
-// 	ft_lstadd_back(&list, ft_lstnew(strdup("D")));
-// 	ft_lstadd_back(&list, ft_lstnew(strdup("E")));
+// 	ft_lstadd_front(&list, ft_lstnew(strdup("A")));
+// 	ft_lstadd_front(&list, ft_lstnew(strdup("B")));
+// 	ft_lstadd_front(&list, ft_lstnew(strdup("C")));
+// 	ft_lstadd_front(&list, ft_lstnew(strdup("D")));
+// 	ft_lstadd_front(&list, ft_lstnew(strdup("E")));
 
 // 	ft_lstadd_front(&list, ft_lstnew(strdup("X")));
 
