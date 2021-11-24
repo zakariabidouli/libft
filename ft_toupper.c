@@ -1,4 +1,6 @@
-#include <ctype.h>
+#include <stdio.h>
+#include <string.h>
+
 
 int ft_toupper(int c)
 {
@@ -13,8 +15,6 @@ int ft_toupper(int c)
     }
     return (tmp);
 }
-#include <stdio.h>
-#include <string.h>
 int main ()
 {
     printf ("%c", ft_toupper('a'));

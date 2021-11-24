@@ -1,4 +1,6 @@
 #include <unistd.h>
+#include <string.h>
+
 unsigned int	ft_strlen(char *str)
 {
 	unsigned int	i;
@@ -35,10 +37,11 @@ unsigned int	ft_strlcat(char	* restrict dest, char	*restrict src, size_t	dstsize
 
 
 int main () {
-   char src[50] = "This is source";
-   char dest[50] = "This is destination";
+   char src[50] = "";
+   char dest[50] = "";
 
-   ft_strlcat(dest, src, 50);
+	ft_strlcat(dest, src, 50);
+	// strlcat(dest, src, 50);
 
    printf("Final destination string : |%s|", dest);
    
