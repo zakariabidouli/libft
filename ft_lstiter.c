@@ -1,25 +1,29 @@
-
 #include "libft.h"
 
-// void del(void *p)
+// void f(void *p)
 // {
-// 	free( ((t_list *)p)->content);
-// 	((t_list *)p)->content = NULL;
+// 	int i;
+
+// 	i = 0;
+// 	while(((char *)p)[i] )
+// 	{
+// 		if (((char *)p)[i] >= 'a' && ((char *)p)[i] >= 'z' )
+// 		((char *)p)[i] += 32;
+// 		i++;
+// 	}
 // }
 
-void ft_lstdelone(t_list *lst, void (*del)(void*))
+void ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*it;
 
 	it = lst;
-	while (it != NULL)  
+	while(it != 0)
 	{
-		del ((void *)it);
+		f(it->content);
 		it = it->next;
 	}
-	return ;
 }
-
 // int main ()
 // {
 // 	t_list *list;
@@ -33,10 +37,15 @@ void ft_lstdelone(t_list *lst, void (*del)(void*))
 // 	ft_lstadd_front(&list, ft_lstnew(strdup("B")));
 // 	ft_lstadd_front(&list, ft_lstnew(strdup("C")));
 // 	ft_lstadd_front(&list, ft_lstnew(strdup("D")));
-// 	ft_lstadd_front(&list, ft_lstnew(strdup("E")));
+// 	ft_lstadd_front(&list, ft_lstnew(strdup("Eklfajjlk")));
 
-
-// 	ft_lstdelone(list, (*del));
+// 	i = list;
+// 	// while (i != NULL)
+// 	// {
+//     // 	printf("[%s]\n", i->content);
+// 	// 	i = i->next;
+// 	// }
+// 	ft_lstiter(list, (*f));
 
 // 	i = list;
 // 	while (i != NULL)

@@ -1,23 +1,24 @@
-
 #include "libft.h"
-
-// void del(void *p)
+// void del(void *it)
 // {
-// 	free( ((t_list *)p)->content);
-// 	((t_list *)p)->content = NULL;
+// 	free((t_list*)it);
+// 	((t_list *)it)->content = NULL;
+// 	((t_list *)it)->next = NULL;
 // }
 
-void ft_lstdelone(t_list *lst, void (*del)(void*))
+void ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*it;
+	t_list	*ptr;
 
-	it = lst;
-	while (it != NULL)  
+	it =  *lst;
+	while (it != NULL)
 	{
-		del ((void *)it);
-		it = it->next;
+		ptr = it;
+		del ((void*)it);
+		it =  ptr->next;
 	}
-	return ;
+	return;
 }
 
 // int main ()
@@ -35,8 +36,13 @@ void ft_lstdelone(t_list *lst, void (*del)(void*))
 // 	ft_lstadd_front(&list, ft_lstnew(strdup("D")));
 // 	ft_lstadd_front(&list, ft_lstnew(strdup("E")));
 
-
-// 	ft_lstdelone(list, (*del));
+// 	i = list;
+// 	while (i != NULL)
+// 	{
+//     	printf("[%s]\n", i->content);
+// 		i = i->next;
+// 	}
+// 	ft_lstclear(&list, (*del));
 
 // 	i = list;
 // 	while (i != NULL)
@@ -47,3 +53,4 @@ void ft_lstdelone(t_list *lst, void (*del)(void*))
 
 // 	return (0);
 // }
+
