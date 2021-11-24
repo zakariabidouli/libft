@@ -7,8 +7,8 @@
 // 	i = 0;
 // 	while(((char *)p)[i] )
 // 	{
-// 		if (((char *)p)[i] >= 'a' && ((char *)p)[i] >= 'z' )
-// 		((char *)p)[i] += 32;
+// 		if (((char *)p)[i] >= 'A' && ((char *)p)[i] >= 'Z' )
+// 		((char *)p)[i] -= 32;
 // 		i++;
 // 	}
 // }
@@ -24,6 +24,7 @@ void ft_lstiter(t_list *lst, void (*f)(void *))
 		it = it->next;
 	}
 }
+
 // int main ()
 // {
 // 	t_list *list;
@@ -40,11 +41,11 @@ void ft_lstiter(t_list *lst, void (*f)(void *))
 // 	ft_lstadd_front(&list, ft_lstnew(strdup("Eklfajjlk")));
 
 // 	i = list;
-// 	// while (i != NULL)
-// 	// {
-//     // 	printf("[%s]\n", i->content);
-// 	// 	i = i->next;
-// 	// }
+// 	while (i != NULL)
+// 	{
+//     	printf("[%s]\n", i->content);
+// 		i = i->next;
+// 	}
 // 	ft_lstiter(list, (*f));
 
 // 	i = list;
