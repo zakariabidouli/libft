@@ -1,5 +1,4 @@
-#include<unistd.h>
-
+#include "libft.h"
 void    *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
     int i;
@@ -20,13 +19,13 @@ void    *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 
 
 
-#include <string.h>
-#include <stdio.h>
-int main ()
-{
-	char *src  = strdup("0123456789");
-	char *dst = strdup(" ");
-	ft_memcpy((void *) dst, (void *) src, 38);
-	printf("%s",dst);
-	return (0);
-}
+// #include <string.h>
+// #include <stdio.h>
+// int main ()
+// {
+// 	char *src  = strdup("0123456789");
+// 	char *dst = strdup(" ");
+// 	ft_memcpy((void *) dst, (void *) src, 38);
+// 	printf("%s",dst);
+// 	return (0);
+// }

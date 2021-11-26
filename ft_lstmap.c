@@ -1,10 +1,10 @@
 #include "libft.h"
 
-void del(void *s)
-{
-	free( ((t_list *)s)->content);
-	((t_list *)s)->content = NULL;
-}
+// void del(void *s)
+// {
+// 	free( ((t_list *)s)->content);
+// 	((t_list *)s)->content = NULL;
+// }
 
 void *f(void *p)
 {

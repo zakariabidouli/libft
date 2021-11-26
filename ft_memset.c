@@ -1,4 +1,4 @@
-#include <unistd.h>
+#include "libft.h"
 
 void *ft_memset(void *b, int c, size_t len)
 {
@@ -14,13 +14,13 @@ void *ft_memset(void *b, int c, size_t len)
     }
     return (b);
 }
-#include <stdio.h>
-#include <string.h>
-int main()
-{
-    char *s = strdup("hello");
+// #include <stdio.h>
+// #include <string.h>
+// int main()
+// {
+//     char *s = strdup("hello");
 
-    printf("%s\n", ft_memset((void *)s ,'d' , 40));
-    printf("%s",memset((void *)s ,'d' , 40));
-    return 0;
-}
+//     printf("%s\n", ft_memset((void *)s ,'d' , 40));
+//     printf("%s",memset((void *)s ,'d' , 40));
+//     return 0;
+// }

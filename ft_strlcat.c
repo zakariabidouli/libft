@@ -1,17 +1,6 @@
-#include <unistd.h>
-#include <string.h>
+#include "libft.h"
 
-unsigned int	ft_strlen(char *str)
-{
-	unsigned int	i;
 
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
-}
 
 unsigned int	ft_strlcat(char	* restrict dest, char	*restrict src, size_t	dstsize)
 {
@@ -33,17 +22,17 @@ unsigned int	ft_strlcat(char	* restrict dest, char	*restrict src, size_t	dstsize
 	dest[j] = '\0';
 	return (org_len + ft_strlen(src));
 }
-#include <stdio.h>
+// #include <stdio.h>
 
 
-int main () {
-   char src[50] = "";
-   char dest[50] = "";
+// int main () {
+//    char src[50] = "";
+//    char dest[50] = "";
 
-	ft_strlcat(dest, src, 50);
-	// strlcat(dest, src, 50);
+// 	ft_strlcat(dest, src, 50);
+// 	// strlcat(dest, src, 50);
 
-   printf("Final destination string : |%s|", dest);
+//    printf("Final destination string : |%s|", dest);
    
-   return(0);
-}
+//    return(0);
+// }

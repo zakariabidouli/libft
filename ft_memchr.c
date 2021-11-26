@@ -1,6 +1,4 @@
-#include <string.h>
-#include <stdio.h>
-
+#include "libft.h"
 void    *ft_memchr(const void *s, int c, size_t n)
 {
     int i;
@@ -16,16 +14,16 @@ void    *ft_memchr(const void *s, int c, size_t n)
     }
     return (0);
 }
-#define TEST str, ch, 10
-int main()
-{
-    const char *str = "123456789";
-    const char ch = '1';
+// #define TEST str, ch, 10
+// int main()
+// {
+//     const char *str = "123456789";
+//     const char ch = '1';
 
   
-    printf("str = %s\n\n", str);
-    printf("Remaining string after '%c' : %s\n", ch, (char *) ft_memchr( TEST));
-    printf("Remaining string after '%c' : %s\n", ch, (char *) memchr( TEST ));
+//     printf("str = %s\n\n", str);
+//     printf("Remaining string after '%c' : %s\n", ch, (char *) ft_memchr( TEST));
+//     printf("Remaining string after '%c' : %s\n", ch, (char *) memchr( TEST ));
 
-    return 0;
-}
+//     return 0;
+// }

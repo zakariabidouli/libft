@@ -1,4 +1,4 @@
-#include <unistd.h>
+
 void *ft_bzero(void *s, size_t n)
 {
     int i;
@@ -13,16 +13,16 @@ void *ft_bzero(void *s, size_t n)
     }
     return (s);
 }
-#include <stdio.h>
-#include <string.h>
-int main()
-{
-    char *s = strdup("00000areyougiongfine");
-    // bzero((void *)s, 5);
-    // printf("%s\n",s + 5);
+// #include <stdio.h>
+// #include <string.h>
+// int main()
+// {
+//     char *s = strdup("00000areyougiongfine");
+//     // bzero((void *)s, 5);
+//     // printf("%s\n",s + 5);
 
-    ft_bzero((void *)s, 4);
-    printf("%s",s + 4);
+//     ft_bzero((void *)s, 4);
+//     printf("%s",s + 4);
 
-    return 0;
-}
+//     return 0;
+// }

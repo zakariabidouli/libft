@@ -1,6 +1,4 @@
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
     char    *tmp;
@@ -31,8 +29,8 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
     p[i]='\0';
     return (p);
 }
-int main()
-{
-    printf ("[%s]\n", ft_substr("ABCDEF", 0, 3));
-    return 0;
-}
+// int main()
+// {
+//     printf ("[%s]\n", ft_substr("ABCDEF", 0, 3));
+//     return 0;
+// }

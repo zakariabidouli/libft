@@ -1,16 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-
-int	ft_strlen(char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 size_t	ft_strlcpy(char	*restrict dest, char	*restrict src, size_t	dstsize)
 {
@@ -38,14 +26,14 @@ size_t	ft_strlcpy(char	*restrict dest, char	*restrict src, size_t	dstsize)
 	return (j);
 }
 
-int main ()
-{
-	size_t dstsize = 15;
-	char *restrict src = "hello";
-	char *restrict desti = "world";
+// int main ()
+// {
+// 	size_t dstsize = 15;
+// 	char *restrict src = "hello";
+// 	char *restrict desti = "world";
 	
 
-	// printf ("[%zu]", dstsize);
+// 	// printf ("[%zu]", dstsize);
 
-	printf ("[%zu]",ft_strlcpy(desti, src, dstsize));
-}
+// 	printf ("[%zu]",ft_strlcpy(desti, src, dstsize));
+// }

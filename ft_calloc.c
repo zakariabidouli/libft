@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include "libft.h"
 
 void    *ft_calloc(size_t count, size_t size)
 {
@@ -20,19 +20,19 @@ void    *ft_calloc(size_t count, size_t size)
     return (ptr); 
 }
 
-#include <stdio.h>
-    int main() {
-        int i,  sum = 0;
+// #include <stdio.h>
+//     int main() {
+//         int i,  sum = 0;
 
-    char *p;    
+//     char *p;    
 
-        p = ft_calloc(10, sizeof(int));
+//         p = ft_calloc(10, sizeof(int));
 
-        for (size_t i = 0; i < 10; i++)
-        {
-           printf("[%c]\n", p[i]);
-        }
+//         for (size_t i = 0; i < 10; i++)
+//         {
+//            printf("[%c]\n", p[i]);
+//         }
         
 
-        return 0;
-    }
+//         return 0;            
+//     }

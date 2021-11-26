@@ -1,20 +1,12 @@
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_strlen(char	*str)
-{
-	int	i;
-	i = 0;
-	while(str[i])
-		i++;
-	return(i);
-}
 
-void uppercase(unsigned int i, char *c)
-{
-    if (c[i] >= 'a' && c[i] <= 'z')
-        c[i] -= 32;
-}
+
+// void uppercase(unsigned int i, char *c)
+// {
+//     if (c[i] >= 'a' && c[i] <= 'z')
+//         c[i] -= 32;
+// }
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {

@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include "libft.h"
 
 int ft_atoi(const char *str)
 {
@@ -29,11 +29,11 @@ int ft_atoi(const char *str)
 	return (x);
     }
 
-#include <stdio.h>
-int	main()
-{
-	printf("[%d]\n",ft_atoi("--1297369"));
-	printf("[%d]",atoi("--1297"));
+// #include <stdio.h>
+// int	main()
+// {
+// 	printf("[%d]\n",ft_atoi("--1297369"));
+// 	printf("[%d]",atoi("--1297"));
 
-	return (0);
-}
+// 	return (0);
+// }

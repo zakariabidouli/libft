@@ -1,5 +1,4 @@
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 void * ft_memmove(void *dst, const void *src, size_t len)
 {
     int i;
@@ -19,12 +18,12 @@ void * ft_memmove(void *dst, const void *src, size_t len)
 }
 
 
-int main ()
-{
-	char *src  = strdup("0123456789");
-	char *dst = strdup(" ");
-	ft_memmove((void *) dst, (void *) src, 38);
-    printf("[%s]\n", memmove((void *) dst, (void *) src, 38));
-	printf("%s",ft_memmove((void *) dst, (void *) src, 38));
-	return (0);
-}
+// int main ()
+// {
+// 	char *src  = strdup("0123456789");
+// 	char *dst = strdup(" ");
+// 	ft_memmove((void *) dst, (void *) src, 38);
+//     printf("[%s]\n", memmove((void *) dst, (void *) src, 38));
+// 	printf("%s",ft_memmove((void *) dst, (void *) src, 38));
+// 	return (0);
+// }

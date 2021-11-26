@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include<string.h>
+#include "libft.h"
 char *ft_strcat(char *dest, char *src)
 {
     unsigned int i;
@@ -19,11 +18,11 @@ char *ft_strcat(char *dest, char *src)
     return(dest);
 }
 
-int main()
-{   
-    char s[20]="abcd";
-    char d[20]="abcd";
-    printf("%s\n", ft_strcat(s,"efgh"));
-    printf("%s", strcat(d,"abcaadd"));
-    return 0;
-}
+// int main()
+// {   
+//     char s[20]="abcd";
+//     char d[20]="abcd";
+//     printf("%s\n", ft_strcat(s,"efgh"));
+//     printf("%s", strcat(d,"abcaadd"));
+//     return 0;
+// }

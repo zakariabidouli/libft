@@ -1,6 +1,5 @@
+#include "libft.h"
 
-#include<stdlib.h>
-#include <stdio.h>  
 char *ft_itoa(int n)
 {
 	int nlen;
@@ -37,9 +36,9 @@ char *ft_itoa(int n)
 		p[0] = '-';
 	return(p);
 }
-int main()
-{
-	int  i = 214748364;
-	printf("[%s]",ft_itoa(i));
-	return 0;
-}
+// int main()
+// {
+// 	int  i = 214748364;
+// 	printf("[%s]",ft_itoa(i));
+// 	return 0;
+// }

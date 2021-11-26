@@ -1,4 +1,5 @@
-#include <ctype.h>
+// #include <ctype.h>
+#include "libft.h"
 
 int ft_tolower(int c)
 {
@@ -13,10 +14,10 @@ int ft_tolower(int c)
     }
     return (tmp);
 }
-#include <stdio.h>
-#include <string.h>
-int main ()
-{
-    printf ("%c", ft_tolower('A'));
-    return 0;
-}
+// #include <stdio.h>
+// #include <string.h>
+// int main ()
+// {
+//     printf ("%c", ft_tolower('A'));
+//     return 0;
+// }

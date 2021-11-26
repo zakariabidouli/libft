@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include "libft.h"
 int	*ft_range(int	min, int	max)
 {
 	int	i;
@@ -19,16 +19,16 @@ int	*ft_range(int	min, int	max)
 	}
 	return (p);
 }
-#include <stdio.h>
-int main()
-{   
-    int *p;
-    int i = 0;
-    p = ft_range (0, 0);
-    while (i < (0 - 0))
-    {
-        printf("%d ", p[i]);
-        i++;
-    }
-    return 0;
-}
+// #include <stdio.h>
+// int main()
+// {   
+//     int *p;
+//     int i = 0;
+//     p = ft_range (0, 0);
+//     while (i < (0 - 0))
+//     {
+//         printf("%d ", p[i]);
+//         i++;
+//     }
+//     return 0;
+// }

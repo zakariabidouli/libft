@@ -1,48 +1,35 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-int	ft_strlen(char	*str)
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-char *ft_substr(char const *s, unsigned int start, size_t len)
-{
-    char    *tmp;
-    char    *p;
-    int     i;
-    int     j;
+// char *ft_substr(char const *s, unsigned int start, size_t len)
+// {
+//     char    *tmp;
+//     char    *p;
+//     int     i;
+//     int     j;
 
   
-    tmp = (char *)s;
-    p = (char *)malloc(len + 1);
-    if (p == NULL)
-        return (NULL);
-    i = 0;
-    j = 0;
-    while (tmp[i])
-    {
-        if (i == start)
-        {
-            while (tmp[i] && (j < len))
-            {
-                p[j] = tmp[i];
-                i++;
-                j++;
-            }
-        }
-        i++;
-    }
-    p[i]='\0';
-    return (p);
-}
+//     tmp = (char *)s;
+//     p = (char *)malloc(len + 1);
+//     if (p == NULL)
+//         return (NULL);
+//     i = 0;
+//     j = 0;
+//     while (tmp[i])
+//     {
+//         if (i == start)
+//         {
+//             while (tmp[i] && (j < len))
+//             {
+//                 p[j] = tmp[i];
+//                 i++;
+//                 j++;
+//             }
+//         }
+//         i++;
+//     }
+//     p[i]='\0';
+//     return (p);
+// }
 
 int search(const char  *set, char c)
 {
@@ -90,10 +77,10 @@ char *ft_strtrim(char const *s1, char const *set)
     return (ft_substr(s1, i, j - i));
 }
 
-int main ()
-{
-    char *s = "0745678912347";
-    char *st = "047";
-    printf("[%s]\n", ft_strtrim(s,st));
-    return 0;
-}
+// int main ()
+// {
+//     char *s = "0745678912347";
+//     char *st = "047";
+//     printf("[%s]\n", ft_strtrim(s,st));
+//     return 0;
+// }

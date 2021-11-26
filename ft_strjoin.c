@@ -1,15 +1,5 @@
-#include <stdlib.h>
-int	ft_strlen(char	*str)
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
 
 char	*ft_strcat(char	*dest, char	*src)
 {
@@ -58,10 +48,10 @@ char	*ft_strjoin(int	size, char	**strs, char	*sep)
 	}
 	return (output);
 }
-#include <stdio.h>
-int main(int    argc,char   **argv)
-{
-    printf("%s\n",ft_strjoin(argc,argv," , "));
+// #include <stdio.h>
+// int main(int    argc,char   **argv)
+// {
+//     printf("%s\n",ft_strjoin(argc,argv," , "));
 
-    return 0;
-}
+//     return 0;
+// }

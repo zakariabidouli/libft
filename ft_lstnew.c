@@ -14,7 +14,7 @@ t_list *ft_lstnew(void *content)
     return lst;
 }
 
-#define P(x) printf("[%s]\n", x);
+// #define P(x) printf("[%s]\n", x);
 
 // int main()
 // {
