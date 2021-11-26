@@ -6,6 +6,6 @@ void ft_putendl_fd(char *s, int fd)
 
 	i = -1;
 	while(s[i++])
-		write(fd, 1, s[i]);
-	write(1, 1, '\n');
+		write(fd, &s[i], 1);
+	write(1, "\n", 1);
 }

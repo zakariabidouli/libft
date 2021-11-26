@@ -6,5 +6,5 @@ void ft_putstr_fd(char *s, int fd)
 
 	i = -1;
 	while(s[i++])
-		write(fd, 1, s[i]);
+		write(fd, &s[i], 1);
 }

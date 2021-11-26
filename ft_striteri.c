@@ -21,12 +21,12 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}	
 }
-#include <string.h>
-int main ()
-{
-    char *s = strdup("abcdefcdcd");
+// #include <string.h>
+// int main ()
+// {
+//     char *s = strdup("abcdefcdcd");
 
-    ft_striteri(s, uppercase);
-    printf ("[%s]\n", s);
-    return (0);
-}
+//     ft_striteri(s, uppercase);
+//     printf ("[%s]\n", s);
+//     return (0);
+// }
