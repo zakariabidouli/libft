@@ -1,8 +1,6 @@
-#include "libft.h"
+// #include "libft.h"
 
-int	ft_isalpha(int c)
-{
-	if(('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z'));
-		return (1);
-	return (0);
-}
+// int	ft_isalpha(int c)
+// {
+// 	return (('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z'));
+// }

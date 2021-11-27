@@ -5,6 +5,8 @@ void * ft_memmove(void *dst, const void *src, size_t len)
 	char *tmp;
 	char *tmp2;
 
+	if (src == NULL)
+		return (dst);
 	i = 0;
 	tmp = (char *)dst;
 	tmp2 = (char *)src;
