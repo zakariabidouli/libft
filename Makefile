@@ -25,7 +25,7 @@ B = 	ft_lstnew_bonus.c		\
 
 OBJS 		= $(SRC:%.c=%.o)
 
-all:$(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS) 
@@ -40,5 +40,4 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
-re: fclean
-	all
+re: fclean all
