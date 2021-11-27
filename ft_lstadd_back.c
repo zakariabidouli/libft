@@ -5,7 +5,9 @@ void ft_lstadd_back(t_list **lst, t_list *new)
 	// t_list *list;
 	t_list *it ;
 
-	if (*lst == NULL) // empty
+	if (lst == NULL || new == NULL)
+		return ;
+	else if (*lst == NULL) // empty
 		*lst = new;
 	else
 	{

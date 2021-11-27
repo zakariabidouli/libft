@@ -1,7 +1,8 @@
 #include "libft.h"
-void    *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+
+void    *ft_memcpy(void *restrict dst,	const void *restrict src,	size_t n)
 {
-    int i;
+    size_t i;
 	char *tmp;
 	char *tmp2;
 
@@ -14,7 +15,7 @@ void    *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 		i++; 
 	}
 	tmp2[i] = '\0';
-	return (dst);
+	return (tmp2);
 }
 
 
