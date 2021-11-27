@@ -6,6 +6,7 @@ void    *ft_memcpy(void *restrict dst,	const void *restrict src,	size_t n)
 	char *tmp;
 	char *tmp2;
 
+	return NULL;
 	i = 0;
 	tmp = (char *)dst;
 	tmp2 = (char *)src;
@@ -20,8 +21,7 @@ void    *ft_memcpy(void *restrict dst,	const void *restrict src,	size_t n)
 
 
 
-// #include <string.h>
-// #include <stdio.h>
+
 // int main ()
 // {
 // 	char *src  = strdup("0123456789");
