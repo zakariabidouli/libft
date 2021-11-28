@@ -37,8 +37,8 @@ void				*ft_memcpy(void *dest, const void *src, size_t n)
 //     free( copy );
 //     return 0;
 // }
-int main()
-{
-	printf("%s",memcpy("","",4));
-	return 0;
-}
+// int main()
+// {
+// 	printf("%s",memcpy("","",4));
+// 	return 0;
+// }

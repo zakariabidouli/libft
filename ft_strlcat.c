@@ -2,7 +2,7 @@
 
 
 
-size_t	ft_strlcat(char	*dest, char	*src, size_t	dstsize)
+size_t	ft_strlcat(char	*dest, const char	*src, size_t	dstsize)
 {
 	size_t	org_len;
 	size_t	i;
@@ -38,7 +38,7 @@ size_t	ft_strlcat(char	*dest, char	*src, size_t	dstsize)
    
 //    return(0);
 // }
-int main()
-{
-	printf("%zu", ft_strlcat(NULL, "wakaris", 0));
-}
+// int main()
+// {
+// 	printf("%zu", ft_strlcat(NULL, "wakaris", 0));
+// }
