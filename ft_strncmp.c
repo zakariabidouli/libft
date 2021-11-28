@@ -3,20 +3,18 @@
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 
-	char *tmp;
-	char *tmp1;
+	char *str1;
+	char *str2;
 	size_t	i;
 
-	if (s1 == 0 || s2 == 0)
+	if (!n)
 		return 0;
-	tmp = (char *)s1;
-	tmp1 = (char *)s2;
+	str1 = (char *)s1;
+	str2 = (char *)s2;
 	i = 0;
-	while (tmp[i] == tmp1[i] && i <= n)
-	{
+	while ((str1[i] == str2[i]) && (i < (n -1)) && str1[i] && str2[i])
 		i++;
-	}
-	return (tmp[i] - tmp1[i]);	
+	return (str1[i] - str2[i]);	
 }
 // #include <stdio.h>
 

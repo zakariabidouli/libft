@@ -2,12 +2,14 @@
 
 
 
-unsigned int	ft_strlcat(char	* restrict dest, char	*restrict src, size_t	dstsize)
+size_t	ft_strlcat(char	*dest, char	*src, size_t	dstsize)
 {
-	unsigned int	org_len;
-	unsigned int	i;
-	unsigned int	j;
+	size_t	org_len;
+	size_t	i;
+	size_t	j;
 
+	if (dest == NULL && dstsize == 0)
+		return(ft_strlen(src));
 	i = 0;
 	j = ft_strlen(dest);
 	org_len = j;
@@ -22,7 +24,7 @@ unsigned int	ft_strlcat(char	* restrict dest, char	*restrict src, size_t	dstsize
 	dest[j] = '\0';
 	return (org_len + ft_strlen(src));
 }
-// #include <stdio.h>
+#include <stdio.h>
 
 
 // int main () {
@@ -36,3 +38,7 @@ unsigned int	ft_strlcat(char	* restrict dest, char	*restrict src, size_t	dstsize
    
 //    return(0);
 // }
+int main()
+{
+	printf("%zu", ft_strlcat(NULL, "wakaris", 0));
+}

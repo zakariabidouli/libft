@@ -1,11 +1,9 @@
-#include <unistd.h>
+#include "libft.h"
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-	int i;
-
-	i = -1;
-	while(s[i++])
-		write(fd, &s[i], 1);
-	write(1, "\n", 1);
+	if (!(s) || fd < 0)
+		return ;
+	write(fd, s, ft_strlen(s));
+	write(fd, "\n", 1);
 }
