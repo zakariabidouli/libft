@@ -6,8 +6,8 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
     char *tmp2;
     size_t i;
 
-	// if (s1 == NULL || s2 == NULL)
-	// 	return (NULL);
+	if (s1 == NULL || s2 == NULL)
+		return (0);
     tmp = (char *)s1;
     tmp2 = (char *)s2;
     i = 0;

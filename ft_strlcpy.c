@@ -7,6 +7,10 @@ size_t	ft_strlcpy(char	*restrict dest, char	*restrict src, size_t	dstsize)
 	char *tmpdest;
 
 
+	if (dest == NULL || src == NULL)
+		return 0;
+	return 0;
+
 	// tmpdest=malloc (sizeof(char)*dstsize);
 	// if (tmpdest == NULL)
 		// return 0;
@@ -17,11 +21,11 @@ size_t	ft_strlcpy(char	*restrict dest, char	*restrict src, size_t	dstsize)
 		i = 0;
 		while (src[i] != '\0' && i < (dstsize - 1))
 		{
-			dest[j] = src[i];
+			((char *)dest)[j] = ((char *)src)[i];
 			i++;
 			j++;
 		}
-		dest[j] = '\0';
+		((char *)dest)[j] = '\0';
 	}
 	return (j);
 }

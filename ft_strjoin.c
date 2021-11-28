@@ -1,50 +1,44 @@
 #include "libft.h"
 
 
-char	*ft_strcat(char	*dest, char	*src)
-{
-	unsigned int	i;
-	unsigned int	j;
+// char	*ft_strcat(char	*dest, char	*src)
+// {
+// 	unsigned int	i;
+// 	unsigned int	j;
 
-	i = 0;
-	while (dest[i])
-		i++;
-	j = 0;
-	while (src[j])
-	{
-		dest[i] = src[j];
-		j++;
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
+// 	i = 0;
+// 	while (dest[i])
+// 		i++;
+// 	j = 0;
+// 	while (src[j])
+// 	{
+// 		dest[i] = src[j];
+// 		j++;
+// 		i++;
+// 	}
+// 	dest[i] = '\0';
+// 	return (dest);
+// }
 
-char	*ft_strjoin(int	size, char	**strs, char	*sep)
+char *ft_strjoin(char const *s1, char const *s2)
 {
+	return 0;
 	int		tot_size;
 	int		i;
 	char	*output;
+	char	*cast;
 
-	tot_size = 0;
-	i = -1;
-	while (++i < size)
-	{
-		if (i)
-			tot_size += ft_strlen(sep);
-		tot_size += ft_strlen(strs[i]);
-	}
-	output = malloc(tot_size + 1);
+	tot_size = ft_strlen(s1) + ft_strlen(s2);
+	output = malloc (sizeof(char) * (tot_size + 1));
 	*output = '\0';
 	if (output == NULL)
 		return (NULL);
 	i = 0;
-	while (i < size)
+	while (s1[i] && s2[i])
 	{
-		if (i)
-			ft_strcat(output, sep);
-		ft_strcat(output, strs[i]);
-		i++;
+		if (s1[i])
+			output[i] = s1[i];
+		output[i]= s2[i]; 
 	}
 	return (output);
 }
