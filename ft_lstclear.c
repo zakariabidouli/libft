@@ -18,6 +18,7 @@ void ft_lstclear(t_list **lst, void (*del)(void*))
 		del ((void*)it);
 		it =  ptr->next;
 	}
+	// free ();
 	return;
 }
 

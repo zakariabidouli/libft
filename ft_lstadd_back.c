@@ -18,19 +18,6 @@ void ft_lstadd_back(t_list **lst, t_list *new)
 	}
 	return;
 	
-	// list = malloc(sizeof(t_list));
-	// if (list == NULL)
-		// return ;
-	// list->content = new->content;
-	// list->next = new ->next;
-	// if (head == NULL)
-	// {	
-	// 	head = new;
-	// 	return;
-	// }
-	// while (head->next != NULL)
-	// 	head = head ->next;
-	// head->next= new;
 }
 
 

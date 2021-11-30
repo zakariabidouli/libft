@@ -18,7 +18,7 @@ int ft_lstsize(t_list *lst)
 // int main ()
 // {
 // 	t_list *list = NULL;
-// 	// t_list *new_node;
+	// t_list *new_node;
 // 	int x;
 
 // 	ft_lstadd_front(&list, ft_lstnew(strdup("A")));
@@ -27,8 +27,8 @@ int ft_lstsize(t_list *lst)
 // 	ft_lstadd_front(&list, ft_lstnew(strdup("D")));
 // 	ft_lstadd_front(&list, ft_lstnew(strdup("E")));
 	
-// 	// list = ft_lstnew(strdup("hi"));
-// 	// new_node = ft_lstnew(strdup("hi"));
+	// list = ft_lstnew(strdup("hi"));
+	// new_node = ft_lstnew(strdup("hi"));
 
 	
 // 	x = ft_lstsize(list);

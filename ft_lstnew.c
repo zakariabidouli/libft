@@ -11,8 +11,9 @@ t_list *ft_lstnew(void *content)
 
 	lst->content = content;
 	lst->next = 0;
-    return lst;
+    return (lst);
 }
+
 // #include <stdio.h>
 // #define P(x) printf("[%s]\n", x);
 
