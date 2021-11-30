@@ -2,31 +2,30 @@
 
 
 
-// void uppercase(unsigned int i, char *c)
-// {
-//     if (c[i] >= 'a' && c[i] <= 'z')
-//         c[i] -= 32;
-// }
+void
+iter(unsigned int i, char * s) {
+	*s += i;
+}
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	i;
+	unsigned int	i;
 
 	if (!s || !f)
 		return ;
 	i = 0;
 	while (s[i] != '\0')
 	{	
-		(*f)(i, s);
+		(*f)(i, &s[i]);
 		i++;
 	}	
 }
-// #include <string.h>
+// #include <stdio.h>
 // int main ()
 // {
-//     char *s = strdup("abcdefcdcd");
+//     char *s = strdup("00000");
 
-//     ft_striteri(s, uppercase);
+//     ft_striteri(s, iter);
 //     printf ("[%s]\n", s);
 //     return (0);
 // }

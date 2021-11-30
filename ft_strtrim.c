@@ -74,13 +74,14 @@ char *ft_strtrim(char const *s1, char const *set)
         else
             break ;
     }
+
     return (ft_substr(s1, i, j - i));
 }
-
+// #include <stdio.h>
 // int main ()
 // {
-//     char *s = "0745678912347";
-//     char *st = "047";
+//     char *s = "abcdba";
+//     char *st = "acb";
 //     printf("[%s]\n", ft_strtrim(s,st));
 //     return 0;
 // }

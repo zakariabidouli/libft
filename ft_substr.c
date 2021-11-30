@@ -1,26 +1,27 @@
 #include "libft.h"
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-    char    *tmp;
+    char    *str;
     char    *p;
-    int     i;
-    int     j;
+    unsigned int     i;
+    size_t     j;
 
-  
-    tmp = (char *)s;
+	// if (start > (unsigned int)ft_strlen(s))
+	// 	return 0;
+    str = (char *)s;
     p = (char *)malloc(len + 1);
     if (p == NULL)
         return (NULL);
     i = 0;
     j = 0;
-    while (tmp[i])
+    while (str[i])
     {
         if (i == start)
         {
-            while (tmp[i] && (j < len))
+            while (str[start] && (j < len) && (j < ft_strlen (s)))
             {
-                p[j] = tmp[i];
-                i++;
+                p[j] = str[start];
+                start++;
                 j++;
             }
         }
@@ -29,8 +30,9 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
     p[i]='\0';
     return (p);
 }
+// #include <stdio.h>
 // int main()
 // {
-//     printf ("[%s]\n", ft_substr("ABCDEF", 0, 3));
+//     printf ("[%s]", ft_substr("tripouille", 100, 1));
 //     return 0;
 // }

@@ -7,11 +7,19 @@ char *ft_itoa(int n)
 	int j;
 	char *p;
 
-	nlen = 0;
+	if (n == -2147483648)
+	{	
+		p = strdup("-2147483648");
+		return (p);
+	}
+	if (n == 0)
+	{
+		p = ft_strdup("0");
+		return (p);
+	}	 
 	i = n;
 	j = n;
-	// if (i == 2147483647)
-	// 	retrurn
+	nlen = 0;
 	if (i < 0)
 	{
 		nlen += 1;
@@ -36,9 +44,10 @@ char *ft_itoa(int n)
 		p[0] = '-';
 	return(p);
 }
+// #include <stdio.h>
 // int main()
 // {
-// 	int  i = 214748364;
-// 	printf("[%s]",ft_itoa(i));
+// 	int  i = 42;
+// 	printf("[%s]\n",ft_itoa(i));
 // 	return 0;
 // }
