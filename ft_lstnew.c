@@ -13,7 +13,7 @@ t_list *ft_lstnew(void *content)
 	lst->next = 0;
     return lst;
 }
-
+// #include <stdio.h>
 // #define P(x) printf("[%s]\n", x);
 
 // int main()

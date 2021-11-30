@@ -33,6 +33,14 @@ $(NAME): $(OBJS)
 $(OBJS): $(SRC)
 	 $(CC) -c $(SRC)
 
+bonus: $(NAME)
+
+$(BONUS): $(OBJS_B)
+	ar rc $(BONUS) $(OBJS_B)
+
+$(OBJS_B): $(B)
+	 $(CC) -c $(B)
+
 clean:
 	rm -rf $(OBJS) $(OBJS_B)
 

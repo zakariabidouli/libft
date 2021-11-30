@@ -2,21 +2,16 @@
 
 char *ft_itoa(int n)
 {
-	int nlen;
-	int i;
-	int j;
+	unsigned int nlen;
+	unsigned int i;
+	unsigned int j;
 	char *p;
 
 	if (n == -2147483648)
-	{	
-		p = strdup("-2147483648");
-		return (p);
-	}
+		return (ft_strdup("-2147483648"));
 	if (n == 0)
-	{
-		p = ft_strdup("0");
-		return (p);
-	}	 
+		return (ft_strdup("0"));
+
 	i = n;
 	j = n;
 	nlen = 0;
@@ -26,24 +21,25 @@ char *ft_itoa(int n)
 		i *= (-1);
 		n *= (-1);
 	}
-	while ( i != 0)
+	while ( i > 0)
 	{
 		i = i / 10;
 		nlen++;
 	}
 	p = malloc((char)nlen + 1);
-	if (p == NULL)
+	if (!p)
 		return (NULL);
 	p[nlen + 1]= '\0';
-	while (nlen-- > i)
+	while (nlen-- != 0)
 	{
 		p[nlen] = (n % 10) + '0';
 		n = n / 10;
 	}
-	if( j < 0)
+	if( j <= 0)
 		p[0] = '-';
 	return(p);
 }
+
 // #include <stdio.h>
 // int main()
 // {

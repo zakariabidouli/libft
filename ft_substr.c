@@ -3,36 +3,30 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 {
     char    *str;
     char    *p;
-    unsigned int     i;
-    size_t     j;
+    size_t     i;
+    size_t  end;
 
-	// if (start > (unsigned int)ft_strlen(s))
-	// 	return 0;
-    str = (char *)s;
-    p = (char *)malloc(len + 1);
-    if (p == NULL)
+	if (len > (size_t)ft_strlen (s))
+		len = (size_t) ft_strlen (s);
+	if (start > (unsigned int)len)
+		return (ft_strdup(""));
+	
+    p = malloc(sizeof(char) * (len + 1));
+	if (!p)
         return (NULL);
-    i = 0;
-    j = 0;
-    while (str[i])
-    {
-        if (i == start)
-        {
-            while (str[start] && (j < len) && (j < ft_strlen (s)))
-            {
-                p[j] = str[start];
-                start++;
-                j++;
-            }
-        }
-        i++;
-    }
-    p[i]='\0';
+    i = start;
+    end = 0;
+    str = (char *)s;
+	while (str[start] && (end < len))
+		p[end++] = str[start++];
+    p[end]='\0';
     return (p);
 }
+
 // #include <stdio.h>
 // int main()
 // {
-//     printf ("[%s]", ft_substr("tripouille", 100, 1));
+//     printf ("[%s]\n", ft_substr(strdup("1"), 1, 1));
 //     return 0;
+
 // }

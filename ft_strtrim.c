@@ -1,35 +1,5 @@
 #include "libft.h"
 
-// char *ft_substr(char const *s, unsigned int start, size_t len)
-// {
-//     char    *tmp;
-//     char    *p;
-//     int     i;
-//     int     j;
-
-  
-//     tmp = (char *)s;
-//     p = (char *)malloc(len + 1);
-//     if (p == NULL)
-//         return (NULL);
-//     i = 0;
-//     j = 0;
-//     while (tmp[i])
-//     {
-//         if (i == start)
-//         {
-//             while (tmp[i] && (j < len))
-//             {
-//                 p[j] = tmp[i];
-//                 i++;
-//                 j++;
-//             }
-//         }
-//         i++;
-//     }
-//     p[i]='\0';
-//     return (p);
-// }
 
 int search(const char  *set, char c)
 {
@@ -47,17 +17,12 @@ int search(const char  *set, char c)
 
 char *ft_strtrim(char const *s1, char const *set)
 {
-
     char    *p;
     int     i;
     int     j;
 
-
-    if (s1 == NULL)
-        return NULL;
     if (set == NULL)
         return ((char *)s1); //??
-
     i = 0;
     while(s1[i])
     {
@@ -74,8 +39,12 @@ char *ft_strtrim(char const *s1, char const *set)
         else
             break ;
     }
-
-    return (ft_substr(s1, i, j - i));
+	p = malloc (sizeof(char) * (j - i));
+    if (p == NULL)
+        return NULL;
+	p = ft_substr(s1, i, j - i);
+	// free (p);
+    return (p);
 }
 // #include <stdio.h>
 // int main ()
