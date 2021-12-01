@@ -1,5 +1,6 @@
 #include "libft.h"
 
+#include <stdio.h> // ?norme
 
 int search(const char  *set, char c)
 {
@@ -18,39 +19,38 @@ int search(const char  *set, char c)
 char *ft_strtrim(char const *s1, char const *set)
 {
     char    *p;
-    int     i;
-    int     j;
+    int     start;
+    int     end;
+    int     len;
 
     if (set == NULL)
         return ((char *)s1); //??
-    i = 0;
-    while(s1[i])
+    start = 0;
+    while(s1[start] )
     {
-        if (search(set, s1[i]))
-            i++;
+        if (search(set, s1[start]))
+            start++;
         else
             break ;
     }
-    j = ft_strlen((char *)s1);
-    while(j != i)
+    end = ft_strlen((char *)s1) - 1;
+    while(s1[end])
     {
-        if (search(set, s1[j - 1]))
-            j--;
+        if (search(set, s1[end]))
+            end--;
         else
             break ;
     }
-	p = malloc (sizeof(char) * (j - i));
-    if (p == NULL)
-        return NULL;
-	p = ft_substr(s1, i, j - i);
-	// free (p);
-    return (p);
+	// if (end == start)
+	// 	end++;
+    return (ft_substr(s1, start, ((end + 1) - start)));
 }
-// #include <stdio.h>
+
+
 // int main ()
 // {
 //     char *s = "abcdba";
-//     char *st = "acb";
-//     printf("[%s]\n", ft_strtrim(s,st));
+//     char *st = "abc";
+//     printf("[%s]\n", ft_strtrim(s, st));
 //     return 0;
 // }

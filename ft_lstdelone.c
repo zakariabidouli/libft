@@ -7,13 +7,20 @@
 // 	((t_list *)p)->content = NULL;
 // }
 
-void ft_lstdelone(t_list *lst, void (*del)(void*))
+// void ft_lstdelone(t_list *lst, void (*del)(void*))
+// {
+// 	if (lst != NULL && del != NULL)
+// 	{	
+// 		del ((void *)lst->content);
+// 		free ((void *)lst);
+// 	}
+// }
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (lst == NULL || del == NULL)
 		return ;
-	del ((void *)lst->content);
-	free (lst->content);
-	return ;
+	del(lst->content);
+	free(lst);
 }
 
 // int main ()

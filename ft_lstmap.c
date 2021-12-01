@@ -20,26 +20,49 @@
 // 	return p;
 // }
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+// t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+// {
+// 	t_list	*it;
+// 	t_list	*ptr;
+// 	t_list	*add;
+
+// 	if (lst == NULL || f == NULL || del == NULL)
+// 		return (NULL);
+// 	ptr = NULL;
+// 	add = NULL;
+// 	it = lst;
+// 	while(it != 0)
+// 	{
+// 		if (!(add = ft_lstnew(strdup(f(it->content)))))
+// 			ft_lstclear(&add, del);
+// 		it = it->next;
+// 		ft_lstadd_back(&ptr, add);
+// 		if (!ptr)
+// 			return (NULL);
+// 		// ptr = ptr->next
+// 	}
+// 	return (ptr);
+// }
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*it;
 	t_list	*ptr;
+	t_list	*add;
 
 	if (lst == NULL || f == NULL)
 		return (NULL);
 	ptr = NULL;
-	it = lst;
-	while(it != 0)
+	while (lst)
 	{
-		ft_lstadd_back(&ptr, ft_lstnew(strdup(f(it->content))));
-		if (ptr == NULL)
+		add = ft_lstnew((*f)(lst->content));
+		if (!add)
+		{
+			ft_lstclear(&ptr, del);
 			return (NULL);
-		if (del == NULL)
-			del ((void *)it->content);
-		it = it->next;
-		// ptr = ptr->next
+		}
+		ft_lstadd_back(&ptr, add);
+		add = add->next;
+		lst = lst->next;
 	}
-	free (lst);
 	return (ptr);
 }
 

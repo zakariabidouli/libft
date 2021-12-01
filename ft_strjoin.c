@@ -22,30 +22,38 @@
 
 char *ft_strjoin(char const *s1, char const *s2)
 {
-	return 0;
-	int		tot_size;
+	int		size;
 	int		i;
-	char	*output;
-	char	*cast;
+	char	*out;
 
-	tot_size = ft_strlen(s1) + ft_strlen(s2);
-	output = malloc (sizeof(char) * (tot_size + 1));
-	*output = '\0';
-	if (output == NULL)
+	size = ft_strlen(s1) + ft_strlen(s2);
+	out = malloc (sizeof(char) * (size + 1));
+	// *out = '\0';
+	if (out == NULL)
 		return (NULL);
 	i = 0;
-	while (s1[i] && s2[i])
+	while ((s1[i] || s2[i]) && i <= size)
 	{
-		if (s1[i])
-			output[i] = s1[i];
-		output[i]= s2[i]; 
+		if(!s1[i])
+		{
+			out[i] = s2[i];
+			i++;
+			break;
+		}
+		out[i]= s1[i]; 
+		i++;
 	}
-	return (output);
+	return (out);
 }
+
 // #include <stdio.h>
-// int main(int    argc,char   **argv)
+// int main()
+
 // {
-//     printf("%s\n",ft_strjoin(argc,argv," , "));
+// 	char const *s = "hello";
+// 	char const *p = "lamna";
+
+//     printf("%s\n",ft_strjoin(s, p));
 
 //     return 0;
 // }

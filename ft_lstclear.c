@@ -6,20 +6,26 @@
 // 	((t_list *)it)->next = NULL;
 // }
 
-void ft_lstclear(t_list **lst, void (*del)(void*))
-{
-	t_list	*it;
-	t_list	*ptr;
+// void ft_lstclear(t_list **lst, void (*del)(void*))
+// {
+// 	t_list	*it;
 
-	it =  *lst;
-	while (it != NULL)
-	{
-		ptr = it;
-		del ((void*)it);
-		it =  ptr->next;
-	}
-	// free ();
-	return;
+// 	it =  *lst;
+// 	while (it != NULL && del != NULL)
+// 	{
+// 		del (it->content);
+// 		it =  it->next;
+// 		free (it);
+// 	}
+// 	return;
+// }
+
+void	ft_lstclear(t_list **lst, void (*del)(void*))
+{
+	if ((*lst)->next)
+		ft_lstclear(&(*lst)->next, del);
+	ft_lstdelone(*lst, del);
+	*lst = NULL;
 }
 
 // int main ()
@@ -54,4 +60,3 @@ void ft_lstclear(t_list **lst, void (*del)(void*))
 
 // 	return (0);
 // }
-
