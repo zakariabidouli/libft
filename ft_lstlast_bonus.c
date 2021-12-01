@@ -1,31 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zbidouli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/01 23:36:33 by zbidouli          #+#    #+#             */
+/*   Updated: 2021/12/01 23:38:19 by zbidouli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
 	if (lst == NULL)
 		return (NULL);
-	while(lst->next != NULL)
-		lst = lst->next;	
-	return(lst);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }
-
-// int main ()
-// {
-// 	t_list *list;
-// 	// t_list *new_node;
-// 	// int x;
-
-// 	ft_lstadd_front(&list, ft_lstnew(strdup("A")));
-// 	ft_lstadd_front(&list, ft_lstnew(strdup("B")));
-// 	ft_lstadd_front(&list, ft_lstnew(strdup("C")));
-// 	ft_lstadd_front(&list, ft_lstnew(strdup("D")));
-// 	ft_lstadd_front(&list, ft_lstnew(strdup("lakher")));
-	
-// 	// list = ft_lstnew(strdup("hi"));
-// 	// new_node = ft_lstnew(strdup("hi"));
-
-// 	list = ft_lstlast(list);
-
-//     printf("[%s]\n", list->content); 
-// 	return (0);
-// }

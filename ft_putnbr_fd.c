@@ -1,11 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zbidouli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/01 23:57:47 by zbidouli          #+#    #+#             */
+/*   Updated: 2021/12/01 23:58:12 by zbidouli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"libft.h"
 
-// void	ft_putchar_fd(char c, int fd)
-// {
-// 	write(fd, &c, 1);
-// }
-
-void	ft_putnbr_fd(int nb, int	fd)
+void	ft_putnbr_fd(int nb, int fd)
 {
 	unsigned int	nbr;
 

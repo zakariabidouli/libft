@@ -1,11 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zbidouli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/02 00:02:49 by zbidouli          #+#    #+#             */
+/*   Updated: 2021/12/02 00:03:10 by zbidouli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-
-
-
-void
-iter(unsigned int i, char * s) {
-	*s += i;
-}
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
@@ -20,12 +25,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}	
 }
-// #include <stdio.h>
-// int main ()
-// {
-//     char *s = strdup("00000");
-
-//     ft_striteri(s, iter);
-//     printf ("[%s]\n", s);
-//     return (0);
-// }

@@ -1,13 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zbidouli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/01 23:27:54 by zbidouli          #+#    #+#             */
+/*   Updated: 2021/12/01 23:29:29 by zbidouli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	// t_list *list;
-	t_list *it ;
+	t_list	*it;
 
 	if (lst == NULL || new == NULL)
 		return ;
-	else if (*lst == NULL) // empty
+	else if (*lst == NULL)
 		*lst = new;
 	else
 	{
@@ -16,21 +27,5 @@ void ft_lstadd_back(t_list **lst, t_list *new)
 			it = it->next;
 		it->next = new;
 	}
-	return;
-	
+	return ;
 }
-
-
-// int main ()
-// {
-// 	t_list *list;
-// 	t_list *new_node;
-	
-// 	list = ft_lstnew(strdup("hi"));
-// 	new_node = ft_lstnew(strdup("hi"));
-
-// 	ft_lstadd_back(&list, new_node);
-
-//     printf("[%s]\n", new_node->next); 
-// 	return (0);
-// }

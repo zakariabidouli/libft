@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zbidouli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/01 23:54:57 by zbidouli          #+#    #+#             */
+/*   Updated: 2021/12/01 23:55:13 by zbidouli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void					*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char		*new_dest;
 	unsigned char		*new_src;
@@ -23,14 +35,3 @@ void					*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
-// #include <stdio.h>
-// int main ()
-// {
-// 	char *src  = strdup("0123456789");
-// 	char dst[15] ;
-// 	ft_memmove((void *) dst, (void *) src, 38);
-//     printf("[%s]\n", memmove((void *) dst, (void *) src, 38));
-// 	printf("%s",ft_memmove((void *) dst, (void *) src, 38));
-// 	return (0);
-// }

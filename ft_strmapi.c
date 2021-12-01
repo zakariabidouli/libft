@@ -1,11 +1,16 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zbidouli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/02 00:06:16 by zbidouli          #+#    #+#             */
+/*   Updated: 2021/12/02 00:06:33 by zbidouli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// char uppercase(unsigned int i, char c)
-// {
-//     if (c >= 'a' && c <= 'z')
-//         return c -= 32;
-//     return c;
-// }
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -23,14 +28,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	c_s[i] = '\0';
 	return (c_s);
 }
-// int main ()
-// {
-//     char *p;
-
-//     char (*ptr)(unsigned int, char);
-
-//     ptr = uppercase;
-//     p = ft_strmapi("ABCAcdcd", ptr);
-//     printf ("[%s]\n",p);
-//     return (0);
-// }

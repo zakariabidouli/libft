@@ -1,105 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zbidouli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/02 00:23:06 by zbidouli          #+#    #+#             */
+/*   Updated: 2021/12/02 00:30:51 by zbidouli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-// int search(const char  *str, char c)
-// {
-// 	int end;
-
-// 	end = 0;
-// 	while(str[end] && str[end] != c)
-// 	{
-// 		end++; 
-// 	}
-// 	return (end);
-// }
-
-
-// int checkifsepa(char *str, int i, char c)
-// {
-// 	if (str[i - 1] != c && str[i - 1] != '\0' && str[i + 1] != c && str[i + 1] != '\0' && str[i] == c )
-// 		return (1);
-// 	return (0);
-// }
-
-// int wordcount(char *str, char c)
-// {
-// 	int i;
-// 	int j;
-// 	int words;
-
-// 	words = 0;
-// 	i = 0;
-// 	while (str[i])
-// 	{
-// 		j = search(str, c);
-// 		while (words && i == j + 1)
-// 		{	
-// 			if (checkifsepa(str, i, c))
-// 				words++;
-// 			else
-// 				i++;
-// 		}
-// 		i++;
-// 	}
-// 	return (words);
-// }
-
-// char *sptwrd(char *str, char   c)
-// {
-// 	int i;
-// 	int j;
-// 	char *p;
-
-// 	i = search (str,c);
-// 	p = malloc(sizeof (char) * (i + 1)); 
-// 	if (p == NULL)
-// 		return(NULL);
-// 	j = 0;
-// 	while (str[j] && j < i)
-// 	{
-// 		p[j] = str[j];
-// 		j++;
-// 	}
-// 	p[j] = '\0';
-// 	return (p);
-// }
-
-// char **ft_split(char const *s, char c)
-// {
-// 	int i;
-// 	char **ptr;
-
-
-// 	ptr = malloc(sizeof(char *) * (wordcount((char *)s, c)));
-// 	*ptr = malloc(sizeof (char) * search((char *)s, c) * (wordcount((char *)s, c)));
-// 	if (ptr == NULL || *ptr == NULL)
-// 		return(NULL);
-// 	i = 0;
-// 	while(i < wordcount((char *)s, c))
-// 	{    
-// 		ptr[i] =malloc(sizeof (char) * (search(s, c)));
-// 		i++;
-// 	}
-// 	while (ptr[i] && i < wordcount((char *)s, c))
-// 	{
-// 		ptr[i] = sptwrd((char *)s, c);
-// 		i++;
-// 	}
-// 	return (ptr);
-// }
-
-
-// int main()
-// {
-// 	//char *p = sptwrd("ABCDEFddfgdf",'D');
-// 	// char **ptr = ft_split("ABCDEFddfgdf",'D');
-// 	int count = wordcount(" AB             CB            DB ",' ');
-// 	printf ("[%d]\n", count);
-	
-// 	return 0;
-// }
-
-
-static char			**ft_malloc_error(char **tab)
+static char	**ft_malloc_error(char **tab)
 {
 	unsigned int	i;
 
@@ -140,10 +53,10 @@ static unsigned int	ft_get_nb_strs(char const *s, char c)
 	return (nb_strs);
 }
 
-static void			ft_get_next_str(char **next_str, unsigned int *next_str_len,
-					char c)
+static void	ft_get_next_str(char **next_str, unsigned int *next_str_len,
+		char c)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	*next_str += *next_str_len;
 	*next_str_len = 0;
@@ -159,7 +72,7 @@ static void			ft_get_next_str(char **next_str, unsigned int *next_str_len,
 	}
 }
 
-char				**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char			**tab;
 	char			*next_str;
@@ -170,7 +83,8 @@ char				**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	nb_strs = ft_get_nb_strs(s, c);
-	if (!(tab = (char **)malloc(sizeof(char *) * (nb_strs + 1))))
+	tab = malloc(sizeof(char *) * (nb_strs + 1));
+	if (!tab)
 		return (NULL);
 	i = 0;
 	next_str = (char *)s;
@@ -178,7 +92,8 @@ char				**ft_split(char const *s, char c)
 	while (i < nb_strs)
 	{
 		ft_get_next_str(&next_str, &next_str_len, c);
-		if (!(tab[i] = (char *)malloc(sizeof(char) * (next_str_len + 1))))
+		tab = malloc(sizeof(char) * (neaxt_str_len + 1))
+		if (!tab)
 			return (ft_malloc_error(tab));
 		ft_strlcpy(tab[i], next_str, next_str_len + 1);
 		i++;

@@ -1,28 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zbidouli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/02 00:22:05 by zbidouli          #+#    #+#             */
+/*   Updated: 2021/12/02 00:22:09 by zbidouli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-void *ft_bzero(void *s, size_t n)
+
+void	*ft_bzero(void *s, size_t n)
 {
-    size_t i;
-    char *x;
+	size_t	i;
+	char	*x;
 
-    x = (char *)s;
-    i = 0;
-    while (i < n)
-    {
-        x[i] = '\0';
-        i++;
-    }
-    return (s);
+	x = (char *)s;
+	i = 0;
+	while (i < n)
+	{
+		x[i] = '\0';
+		i++;
+	}
+	return (s);
 }
-// #include <stdio.h>
-// #include <string.h>
-// int main()
-// {
-//     char *s = strdup("00000areyougiongfine");
-//     // bzero((void *)s, 5);
-//     // printf("%s\n",s + 5);
-
-//     ft_bzero((void *)s, 4);
-//     printf("%s",s + 4);
-
-//     return 0;
-// }

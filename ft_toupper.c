@@ -1,21 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zbidouli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/02 00:21:02 by zbidouli          #+#    #+#             */
+/*   Updated: 2021/12/02 00:21:21 by zbidouli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
-    ///int i;
-    char tmp;
+	char	tmp;
 
-    tmp = (char) c;
-    //i = 0;
-    if ( tmp >= 'a' && tmp <= 'z')
-    {
-        tmp -= 32;
-    }
-    return (tmp);
+	tmp = (char) c;
+	if (tmp >= 'a' && tmp <= 'z')
+	{
+		tmp -= 32;
+	}
+	return (tmp);
 }
-// int main ()
-// {
-//     printf ("%c", ft_toupper('a'));
-//     return 0;
-// }

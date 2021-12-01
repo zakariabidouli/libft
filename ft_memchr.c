@@ -1,29 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zbidouli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/01 23:46:37 by zbidouli          #+#    #+#             */
+/*   Updated: 2021/12/01 23:49:12 by zbidouli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-void    *ft_memchr(const void *s, int c, size_t n)
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-    int i;
-    char *tmp;
-    tmp = (char *)s;
+	int		i;
+	char	*tmp;
 
-    i = 0;
-    while(i < n)
-    {
-        if (tmp[i] == (unsigned char)c)
-            return ((char *)&tmp[i]);
-        i++;
-    }
-    return (0);
+	tmp = (char *)s;
+	i = 0;
+	while (i < n)
+	{
+		if (tmp[i] == (unsigned char)c)
+			return ((char *)&tmp[i]);
+		i++;
+	}
+	return (0);
 }
-// #define TEST str, ch, 10
-// int main()
-// {
-//     const char *str = "123456789";
-//     const char ch = '1';
-
-  
-//     printf("str = %s\n\n", str);
-//     printf("Remaining string after '%c' : %s\n", ch, (char *) ft_memchr( TEST));
-//     printf("Remaining string after '%c' : %s\n", ch, (char *) memchr( TEST ));
-
-//     return 0;
-// }

@@ -1,55 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zbidouli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/01 23:30:28 by zbidouli          #+#    #+#             */
+/*   Updated: 2021/12/01 23:30:49 by zbidouli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-
-// t_list *ft_lstnew(void *content)
-// {
-//     t_list *lst;
-
-//     lst = malloc(sizeof(t_list));
-// 	if (lst == NULL)
-// 		return (NULL);
-
-// 	lst->content = content;
-// 	lst->next = 0;
-//     return lst;
-// }
-
-void ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list *it;
+	t_list	*it;
+
 	if (lst == NULL || new == NULL)
 		return ;
 	it = *lst;
 	new->next = it;
 	*lst = new;
-	return;
+	return ;
 }
-
-// int main ()
-// {
-// 	t_list *list;
-// 	t_list *new_node;
-	
-// 	list = NULL; //first node
-
-// 	ft_lstadd_front(&list, ft_lstnew(strdup("A")));
-// 	ft_lstadd_front(&list, ft_lstnew(strdup("B")));
-// 	ft_lstadd_front(&list, ft_lstnew(strdup("C")));
-// 	ft_lstadd_front(&list, ft_lstnew(strdup("D")));
-// 	ft_lstadd_front(&list, ft_lstnew(strdup("E")));
-
-// 	ft_lstadd_front(&list, ft_lstnew(strdup("X")));
-
-
-// 	t_list *i;
-
-// 	i = list;
-// 	while (i != NULL)
-// 	{
-//     	printf("[%s]\n", i->content); 
-// 		i = i->next;
-// 	}
-
-// 	return (0);
-// }

@@ -1,28 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zbidouli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/02 00:13:44 by zbidouli          #+#    #+#             */
+/*   Updated: 2021/12/02 00:14:34 by zbidouli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-    int i;
+	int	i;
 
-    i = 0;  //ft_strlen
-    while(s[i])
-        i++;
-    while(i > -1)
-    {
-        if (s[i] == (char)c)
-            return ((char*)&s[i]);
-        i--;
-    }
-    return (0);
+	i = 0;
+	while (s[i])
+		i++;
+	while (i > -1)
+	{
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+		i--;
+	}
+	return (0);
 }
-// int main()
-// {
-//      char *s = "abc123456739";
-//      char x;
-//      int c = '1';
-//      x = (char)c;
-
-//     printf("[%s]\n", ft_strrchr(s ,c));
-//     //printf("%s\n", strchr(s ,c));
-//     return 0;
-// }
