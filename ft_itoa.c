@@ -21,7 +21,7 @@ char *ft_itoa(int n)
 		i *= (-1);
 		n *= (-1);
 	}
-	while ( i > 0)
+	while (i > 0)
 	{
 		i = i / 10;
 		nlen++;
@@ -29,7 +29,7 @@ char *ft_itoa(int n)
 	p = malloc((char)nlen + 1);
 	if (!p)
 		return (NULL);
-	p[nlen + 1]= '\0';
+	p[nlen]= '\0';
 	while (nlen-- != 0)
 	{
 		p[nlen] = (n % 10) + '0';
