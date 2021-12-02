@@ -25,21 +25,23 @@ B = 	ft_lstnew_bonus.c		\
 		ft_lstmap_bonus.c
 
 OBJS 		= $(SRC:%.c=%.o)
+
 OBJS_B 		= $(B:%.c=%.o)
 	
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS) 
+	ar -rc $(NAME) $(OBJS) 
 
 $(OBJS): $(SRC)
-	 $(CC) -c $(FLAGS) -c $(SRC)
+	 $(CC) $(FLAGS) -c $(SRC) 
 
 $(OBJS_B): $(B)
-	 $(CC) $(FLAGS) $(SRC) $(B)
+	 $(CC) $(FLAGS) -c $(B)
 
 bonus: $(OBJS_B)
-	ar rc $(NAME) $(OBJS) $(B)
+	ar -rc $(NAME) $(OBJS_B)
 
 clean:
 	rm -rf $(OBJS) $(OBJS_B)
