@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	math(const char *s, int i)
+static unsigned int	math(const char *s, int i)
 {
 	int	x;
 
@@ -33,10 +33,12 @@ int	ft_atoi(const char	*str)
 	int		x;
 	char	*s;
 
+	if (!(str))
+		return (0);
 	i = 0;
 	j = 0;
 	s = (char *)str;
-	while (s[i] <= 32)
+	while (s[i] == 32 || (9 <= s[i] && 13 >= s[i]))
 		i++;
 	if (s[i] == '-' && ++i)
 		j++;

@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-static char	*math(int n, int nlen)
+static char	*math(int n, unsigned int nlen, int signe)
 {	
-	char	*p;
-	int		i;
-	int		j;
+	char			*p;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = n;
 	j = n;
@@ -34,31 +34,29 @@ static char	*math(int n, int nlen)
 		p[nlen] = (n % 10) + '0';
 		n = n / 10;
 	}
-	if (j <= 0)
+	if (signe == 1)
 		p[0] = '-';
 	return (p);
 }
 
 char	*ft_itoa(int n)
 {
-	int		nlen;
-	int		i;
-	int		j;
-	char	*p;
+	unsigned int	nlen;
+	int				signe;
+	char			*p;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	if (n == 0)
 		return (ft_strdup("0"));
-	i = n;
-	j = n;
 	nlen = 0;
-	if (i < 0)
+	signe = 0;
+	if (n < 0)
 	{
 		nlen += 1;
-		i *= (-1);
 		n *= (-1);
+		signe = 1;
 	}
-	p = math(i, nlen);
+	p = math(n, nlen, signe);
 	return (p);
 }
