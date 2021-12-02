@@ -39,6 +39,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		if (!(search(set, s1[start])))
 			break ;
 		start++;
+		if (start == ft_strlen((char *)s1))
+			return (ft_strdup(""));
 	}
 	end = (ft_strlen((char *)s1) - 1);
 	while (s1[end])
