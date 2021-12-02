@@ -1,4 +1,5 @@
 
+.PHONY: all clean fclean re
 
 NAME 	= libft.a
 
@@ -25,8 +26,6 @@ B = 	ft_lstnew_bonus.c		\
 
 OBJS 		= $(SRC:%.c=%.o)
 OBJS_B 		= $(B:%.c=%.o)
-
-
 	
 all: $(NAME)
 
@@ -36,13 +35,11 @@ $(NAME): $(OBJS)
 $(OBJS): $(SRC)
 	 $(CC) -c $(SRC)
 
-bonus:$(NAME) 
-
-$(NAME): $(OBJS_B)
-	ar rc $(NAME) $(OBJS_B)
-
 $(OBJS_B): $(B)
-	 $(CC) -c $(B)
+	 $(CC) -c $(SRC) $(B)
+
+bonus: $(OBJS_B)
+	ar rc $(NAME) $(OBJS) $(B)
 
 clean:
 	rm -rf $(OBJS) $(OBJS_B)
@@ -51,3 +48,4 @@ fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
+
