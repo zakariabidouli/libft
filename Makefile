@@ -24,7 +24,7 @@ B = 	ft_lstnew_bonus.c		\
 		ft_lstmap_bonus.c
 
 OBJS 		= $(SRC:%.c=%.o)
-# OBJS_B 		= $(B:%.c=%.o)
+OBJS_B 		= $(B:%.c=%.o)
 
 
 	
@@ -36,13 +36,13 @@ $(NAME): $(OBJS)
 $(OBJS): $(SRC)
 	 $(CC) -c $(SRC)
 
-# bonus:$(NAME) 
+bonus:$(NAME) 
 
-# $(NAME): $(OBJS_B)
-# 	ar rc $(NAME) $(OBJS_B)
+$(NAME): $(OBJS_B)
+	ar rc $(NAME) $(OBJS_B)
 
-# $(OBJS_B): $(B)
-# 	 $(CC) -c $(B)
+$(OBJS_B): $(B)
+	 $(CC) -c $(B)
 
 clean:
 	rm -rf $(OBJS) $(OBJS_B)
