@@ -1,10 +1,10 @@
 
 .PHONY: all clean fclean re
 
-NAME 	= libft.a
+NAME 	:= libft.a
 
 CC 		= gcc
-FLAGS	= -Wall -Wextra -Werror
+FLAGS	= #-Wall -Wextra -Werror
 
 
 SRC 	 =  ft_atoi.c ft_bzero.c ft_calloc.c  ft_isalpha.c ft_isdigit.c ft_itoa.c  ft_isprint.c 			\
@@ -33,10 +33,10 @@ $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS) 
 
 $(OBJS): $(SRC)
-	 $(CC) -c $(SRC)
+	 $(CC)  $(FLAGS) -c $(SRC)
 
 $(OBJS_B): $(B)
-	 $(CC) -c $(SRC) $(B)
+	 $(CC) -c $(FLAGS) $(SRC) $(B)
 
 bonus: $(OBJS_B)
 	ar rc $(NAME) $(OBJS) $(B)

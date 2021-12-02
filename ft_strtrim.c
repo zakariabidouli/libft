@@ -12,12 +12,24 @@
 
 #include "libft.h"
 
+static int	search(const char *set, char c)
+{
+	int	i;
+
+	i = 0;
+	while (set[i])
+	{
+		if (set[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*p;
 	int		start;
 	int		end;
-	int		len;
 
 	if (set == NULL)
 		return ((char *)s1);

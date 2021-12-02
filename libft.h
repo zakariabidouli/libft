@@ -13,23 +13,9 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <unistd.h>
-#include <string.h>
-#include <stdlib.h>
-
-int	search(const char *set, char c)
-{
-	int	i;
-
-	i = 0;
-	while (set[i])
-	{
-		if (set[i] == c)
-			return (1);
-		i++;
-	}
-	return (0);
-}
+# include <unistd.h>
+# include <string.h>
+# include <stdlib.h>
 
 typedef struct s_list
 {
@@ -61,7 +47,7 @@ int		ft_strlen(const char	*str);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *s, int c);
-int		search(const char *set, char c);
+static int		search(const char *set, char c);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);

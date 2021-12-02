@@ -12,6 +12,20 @@
 
 #include "libft.h"
 
+static int	math(const char *s, int i)
+{
+	int	x;
+
+	x = 0;
+	while ('0' <= s[i] && s[i] <= '9')
+	{
+		x *= 10;
+		x += s[i] - '0';
+		i++;
+	}
+	return (x);
+}
+
 int	ft_atoi(const char	*str)
 {
 	int		i;
@@ -24,22 +38,13 @@ int	ft_atoi(const char	*str)
 	s = (char *)str;
 	while (s[i] <= 32)
 		i++;
-	if (s[i] == '-')
-	{
-		i++;
+	if (s[i] == '-' && ++i)
 		j++;
-	}
 	else if (s[i] == '+')
 		i++;
 	if (!ft_strncmp(&str[i], "-2147483648", 12))
 		return (-2147483648);
-	x = 0;
-	while ('0' <= s[i] && s[i] <= '9')
-	{
-		x *= 10;
-		x += s[i] - '0';
-		i++;
-	}
+	x = math(s, i);
 	if (j % 2)
 		x = -x;
 	return (x);
