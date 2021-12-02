@@ -83,20 +83,19 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	nb_strs = ft_get_nb_strs(s, c);
-	tab = malloc(sizeof(char *) * (nb_strs + 1));
+	tab = (char **)malloc(sizeof(char *) * (nb_strs + 1));
 	if (!tab)
 		return (NULL);
-	i = 0;
+	i = -1;
 	next_str = (char *)s;
 	next_str_len = 0;
-	while (i < nb_strs)
+	while (++i < nb_strs)
 	{
 		ft_get_next_str(&next_str, &next_str_len, c);
-		tab = malloc(sizeof(char) * (next_str_len + 1));
+		tab[i] = (char *)malloc(sizeof(char) * (next_str_len + 1));
 		if (!tab)
 			return (ft_malloc_error(tab));
 		ft_strlcpy(tab[i], next_str, next_str_len + 1);
-		i++;
 	}
 	tab[i] = NULL;
 	return (tab);
